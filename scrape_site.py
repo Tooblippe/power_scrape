@@ -57,10 +57,10 @@ data['boiler'] 		= data['dom'].apply(lambda x : x.xpath(' //*[@id="Boiler_Manufa
 
 #scrape from description tag using pythons text functions
 #offsets hard coded. not a good idea should format change
-data['units'] 		= data['description'].apply( lambda a : a[a.find('It has') + 7:a.find('It has')+9].rstrip() )
-data['plant_type']  = data['description'].apply( lambda a : a[a.find('TYPE') + 5:a.find('with')].rstrip())
+data['units'] 		= data['description'].apply( lambda a : a[a.find('It has') + 7: a.find('It has')+9].rstrip() )
+data['plant_type']  = data['description'].apply( lambda a : a[a.find('TYPE')   + 5: a.find('with')].rstrip())
 data['capacity'] 	= data['description'].apply( lambda a : a[a.find('capacity of') + 12:a.find('MWe')].rstrip())
-data['operated_by'] = data['description'].apply( lambda a : a[a.find('operated by')+ 12 :-1].rstrip() )
+data['operated_by'] = data['description'].apply( lambda a : a[a.find('operated by') + 12 :-1].rstrip() )
 
 
 #prepare xls writeout
